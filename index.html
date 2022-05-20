@@ -1,32 +1,10 @@
-<style>
-  body {
-    background-color: rgb(91, 146, 229);
-  }
-
-  .logo {
-    width: 100%;
-  }
-  
-  article {
-    max-width: 500px;
-    margin: 0 auto;
-    color: rgb(255, 255, 255);
-  }
-  
-  h2 {
-    font-family: sans-serif;
-    padding-bottom: 10px;
-		border-bottom: 3px solid rgb(255, 255, 255);
-  }
-  
-  p {
-    line-height: 20px;
-  }
-</style>
-
 <body>
+  
   <img class="logo" src="https://freedomandsafety.com/sites/default/files/UDHR.jpg" alt="UDHR logo">
-
+  <img class="message" src="blurred_message.png" alt="Message Data">
+  <div class="popup" button onclick="button()"> <b> Click me to read the creators conversations! </b>
+  <span class="popuptext" id="PopupMessage">These messages are not free. Pay $4.99 to read these messages. Venmo @Nicole-Avila-41 or @Jason-Chee-1.</span>
+</div>
   <article>
     <h2>Digitizing Human Rights: Privacy</h2>
 
@@ -134,3 +112,94 @@
     
   </article>
 </body>
+<style>
+  
+  body {
+    background-color: rgb(91, 146, 229);
+  }
+
+  .logo {
+    width: 100%;
+  }
+  .message {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .popup {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+    /* display: block; */
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: rgb(72, 193, 74);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+div  {
+  text-align: center;
+  color: rgb(216, 56, 56);
+}
+  
+  article {
+    max-width: 500px;
+    margin: 0 auto;
+    color: rgb(255, 255, 255);
+  }
+  
+  h2 {
+    font-family: sans-serif;
+    padding-bottom: 10px;
+		border-bottom: 3px solid rgb(255, 255, 255);
+  }
+  
+  p {
+    line-height: 20px;
+  }
+</style>
+
+  <script>
+  function button() {
+    // var button = document.getElementById("clicked");
+    var popup = document.getElementById("PopupMessage");
+    popup.classList.toggle("show");
+    }
+  </script>
